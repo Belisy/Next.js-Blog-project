@@ -40,16 +40,14 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <Image src="/images/profile.jpg" width={150} height={150} alt="belisy" />
-      <Link href="/posts/first-post" legacyBehavior>
-        <a>첫번째 글</a>
-      </Link>
-
-      <Link href="/posts/second-post" legacyBehavior>
-        <a>두번째 글</a>
-      </Link>
 
       <section>
         <h2>Blog</h2>
+
+        <Link href={"/post/write"} legacyBehavior>
+          <a>글 작성하기</a>
+        </Link>
+
         <ul>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id}>
