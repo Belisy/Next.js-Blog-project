@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   }
 }
 
@@ -26,13 +26,13 @@ export default function Post({ postData }) {
       <Head>
         <title>Blog | Post</title>
       </Head>
-      {postData.title}
+      {postData?.title}
       <br />
-      {postData.id}
+      {postData?.id}
       <br />
-      <Date dateString={postData.date} />
+      <Date dateString={postData?.date} />
       <br />
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <div dangerouslySetInnerHTML={{ __html: postData?.contentHtml }} />
     </Layout>
   )
 }
