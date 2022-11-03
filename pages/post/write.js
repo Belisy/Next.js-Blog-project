@@ -39,7 +39,7 @@ export default function Write() {
           setShowLink(true)
           alert(data.message)
         })
-        .catch((err) => alert(`request error: ${error}`))
+        .catch((error) => alert(`request error: ${error}`))
     }
   }
 
